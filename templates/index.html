@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InstagramLab | Panel de extracción</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main class="layout"><div class="eyebrow">PROYECTO UNIVERSITARIO · PLAYWRIGHT</div><h1>Instagram<span>Lab</span></h1>
+<p class="lead">Primero inicia sesión y guarda las cookies. Después podrás extraer los datos de un perfil.</p>
+<section class="panel"><div class="status"><h2>1. Carga de cookies</h2><span id="authBadge">Sin validar</span></div>
+<p>Abre Instagram en Chromium para iniciar sesión manualmente y completar la verificación por teléfono, dos pasos o CAPTCHA si es necesaria.</p>
+<button type="button" id="loadCookies">Cargar cookies / Abrir login</button>
+<button type="button" id="confirmCookies" class="secondary" disabled>Verificar y guardar cookies</button>
+<ul id="authEvents"><li>Pulsa «Cargar cookies» para comenzar.</li></ul><p id="authError" role="alert"></p></section>
+<section class="panel" id="scrapingPanel"><div class="status"><h2>2. Scraping</h2><span id="badge">Bloqueado</span></div>
+<p id="scrapingHint">Primero debes cargar y verificar las cookies.</p>
+<form id="jobForm"><fieldset id="scrapingFields" disabled><label for="profile">Perfil de Instagram</label>
+<input id="profile" placeholder="@usuario o https://www.instagram.com/usuario/" required autocomplete="off">
+<label for="posts">Número máximo de publicaciones</label><input id="posts" type="number" min="1" max="100" value="2" required>
+<button id="submit" type="submit">Iniciar extracción →</button></fieldset></form></section>
+<section class="panel"><div class="status"><h2>Actividad del scraper</h2><span id="jobBadge">Sin ejecutar</span></div>
+<ul id="events"><li>Esperando extracción…</li></ul><p id="error" role="alert"></p><a id="download" hidden>Descargar JSON ↓</a></section>
+<section class="panel" id="analysisPanel" hidden>
+<div class="status"><h2>3. Análisis Big Five del contenido</h2><span id="analysisBadge">Exploratorio</span></div>
+<p class="disclaimer">Estas barras muestran señales presentes en los textos publicados, no la personalidad real, ni un test psicológico validado.</p>
+<p id="analysisSummary"></p>
+<div id="bigFiveBars" class="trait-list" aria-label="Gráfica de señales textuales"></div>
+<p id="analysisLimitations" class="disclaimer"></p>
+<a id="analysisDownload" hidden>Descargar análisis JSON ↓</a>
+</section>
+<footer>Las cookies permanecen en tu equipo. No las subas a GitHub ni compartas el archivo.</footer></main>
+<script src="/static/app.js"></script></body></html>

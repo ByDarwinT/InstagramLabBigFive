@@ -1,0 +1,16 @@
+# Sesiones y datos privados
+cookies.json
+cookies.json.tmp
+.env
+.env.*
+output/
+*.log
+
+# Archivos locales
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
